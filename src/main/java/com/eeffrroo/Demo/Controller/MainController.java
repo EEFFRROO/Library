@@ -6,7 +6,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class MainController {
     @GetMapping("/")
-    public String index() {
+    public String main() {
         return "it's main page";
+    }
+
+    @GetMapping("/info")
+    public String index() {
+        return "it's info page";
     }
 }
