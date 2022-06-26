@@ -11,7 +11,7 @@ public class Book {
     private String author;
     private String genre;
 
-    protected Book() {}
+    public Book() {}
 
     public Book(String name) {
         this.name = name;

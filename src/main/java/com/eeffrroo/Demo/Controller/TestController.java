@@ -1,9 +1,11 @@
 package com.eeffrroo.Demo.Controller;
 
+import com.eeffrroo.Demo.Entity.Book;
 import com.eeffrroo.Demo.Repository.BookRepository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
@@ -31,11 +33,11 @@ public class TestController {
 
     @GetMapping("/check")
     @ResponseBody
-    public String checkRepository(@RequestParam(required = false) String bookName) {
+    public List<Book> checkRepository(@RequestParam(required = false) String bookName) {
         if (bookName == null) {
             bookName = "Golden fish";
         }
-        return this.repository.findByName(bookName).toArray()[0].toString();
+        return this.repository.findByName(bookName);
     }
 
     @ExceptionHandler(Throwable.class)

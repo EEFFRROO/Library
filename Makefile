@@ -9,3 +9,7 @@ java-up:
 	cd $(DOCKER_FOLDER); \
 	docker-compose up -d --build
 
+java-stop:
+	cd $(DOCKER_FOLDER); \
+	docker-compose stop
+
